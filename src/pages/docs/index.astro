@@ -1,18 +1,16 @@
 ---
 import Documentation from '../../layouts/Documentation.astro';
-
-export interface Page {
-    title: string;
-    url?: string;
-    pages?: Page[];
-}
+import type { Page } from './types';
 
 export const pages: Page[] = [{
     title: 'x86',
     pages: [{
         title: 'Linux',
         pages: [{
-            title: 'int 80h',
+            title: 'Syscalls',
+            url: '/docs/x86/linux/syscalls'
+        }, {
+            title: 'Int 80h',
             url: '/docs/x86/linux/80h',
         }]
     }]
