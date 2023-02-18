@@ -69,5 +69,6 @@
 
   .header-wrapper .logo {
     font-size: 25px;
+    user-select: none;
   }
 </style>
