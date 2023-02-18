@@ -14,7 +14,9 @@
 		"@astrojs/mdx": "^0.17.0",
 		"@astrojs/node": "^5.0.3",
 		"@astrojs/svelte": "^2.0.2",
+		"@nanostores/persistent": "^0.7.0",
 		"astro": "^2.0.12",
+		"nanostores": "^0.7.4",
 		"rehype-pretty-code": "^0.9.3",
 		"svelte": "^3.55.1"
 	}

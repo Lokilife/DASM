@@ -1,12 +1,12 @@
 ---
-import Sidebar from "../components/sidebar/sidebar.astro";
+import Sidebar from "../components/sidebar/sidebar.svelte";
 import Layout from "./Layout.astro";
 
 ---
 
 <Layout title="DASM | Documentation">
 	<main class="flex">
-        <Sidebar />
+        <Sidebar client:only />
         <div class="content">
             <slot />
         </div>

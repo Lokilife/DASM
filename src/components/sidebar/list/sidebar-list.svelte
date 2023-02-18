@@ -16,7 +16,7 @@
           </div>
         </Collapsible>
       {:else}
-        <div>
+        <div class="flex">
           <a href={item.url}>
             {item.title}
           </a>
@@ -29,15 +29,18 @@
 <style>
   ul {
     list-style: none;
-    padding-left: 8px;
+    padding-left: 10px;
   }
-  div a:hover {
+
+  div a:hover,
+  div[slot="title"]:hover {
     background: #424242;
     border-radius: 6px;
   }
-  div a {
+  div a,
+  div[slot="title"] {
     padding: 5px 10px;
-    display: block;
+    display: flex;
     width: 100%;
   }
 </style>

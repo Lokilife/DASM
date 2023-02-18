@@ -1,12 +1,11 @@
 <script>
   export let expanded = true;
-  console.log("expanded", expanded);
 </script>
 
 <div class="flex flex-column gap-10">
   <button
     aria-expanded={expanded}
-    class="title"
+    class="flex"
     on:click={() => (expanded = !expanded)}
   >
     <slot name="title" />
@@ -21,10 +20,6 @@
     background: 0;
     border: 0;
     font-size: 16px;
-  }
-  .title {
-    display: flex;
-    gap: 10px;
     cursor: pointer;
   }
 </style>
