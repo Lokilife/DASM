@@ -1,0 +1,26 @@
+---
+import Documentation from '../../layouts/Documentation.astro';
+
+export interface Page {
+    title: string;
+    url?: string;
+    pages?: Page[];
+}
+
+export const pages: Page[] = [{
+    title: 'x86',
+    pages: [{
+        title: 'Linux',
+        pages: [{
+            title: 'int 80h',
+            url: '/docs/x86/linux/80h',
+        }]
+    }]
+}];
+---
+
+<Documentation>
+</Documentation>
+
+<style>
+</style>

@@ -1,0 +1,50 @@
+---
+import type { Page } from '../../../pages/docs/index.astro';
+
+export interface Props { 
+    pages: Page[];
+    nested?: boolean
+};
+
+const { pages, nested } = Astro.props;
+
+---
+
+<ul class={ nested ? 'nested' : '' }>
+    {pages.map(page =>
+        <li class="flex flex-column">
+            {page.url ? <span><a href={page.url}>{page.title}</a></span> : <span class="category">{page.title}</span>}
+            {page.pages?.length && <Astro.self pages={page.pages} nested={true} />}
+        </li>
+    )}
+</ul>
+<style>
+    ul {
+        list-style: none;
+        padding-left: 0;
+        position: relative;
+    }
+    .nested {
+        padding-left: 10px;
+    }
+    .category {
+        font-weight: 600;
+        font-size: 18px;
+    }
+    li {
+        gap: 5px;
+        min-width: 170px;
+        position: absolute;
+    }
+    span {
+        padding: 5px 10px;
+    }
+    span:hover {
+        background: #424242;
+        border-radius: 6px;
+    }
+    span a {
+        display: block;
+        width: 100%;
+    }
+</style>

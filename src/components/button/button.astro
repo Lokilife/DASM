@@ -1,0 +1,36 @@
+---
+export interface Props {
+    href?: string;
+    onClick?: string;
+}
+
+const { href, onClick } = Astro.props;
+---
+
+{
+    href ? <a href={href} class="button"><slot/></a> :
+        <button class="button" onclick={onClick}>
+            <slot/>
+        </button>
+}
+
+<style>
+    .button {
+        text-decoration: none;
+        border: 0;
+        background-color: #0d6efd;
+        padding: 10px 40px;
+        border-radius: 6px;
+        outline: 0;
+        font-size: 16px;
+        font-weight: 400;
+        transition: background-color .15s ease-in-out;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #0b5ed7;
+    }
+    .button:active {
+        background-color: #0D47A1;
+    }
+</style>

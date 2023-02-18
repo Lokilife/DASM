@@ -1,0 +1,28 @@
+---
+import { pages } from '../../pages/docs/index.astro';
+import SidebarList from './list/sidebar-list.astro';
+
+export interface Props {
+
+}
+
+const {} = Astro.props;
+
+---
+
+<div class="list-wrapper">
+    <SidebarList pages={pages} />
+</div>
+
+<style>
+    .list-wrapper {
+        width: 200px;
+        max-width: 200px;
+        border-right: 1px solid #757575;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-inline: 30px;
+        position: relative;
+    }
+</style>

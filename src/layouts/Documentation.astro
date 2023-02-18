@@ -1,0 +1,28 @@
+---
+import Sidebar from "../components/sidebar/sidebar.astro";
+import Layout from "./Layout.astro";
+
+---
+
+<Layout title="DASM | Documentation">
+	<main class="flex">
+        <Sidebar />
+        <div class="content">
+            <slot />
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        height: 100%;
+    }
+    body {
+        overflow: hidden;
+    }
+    header {
+    }
+    .content {
+        padding-inline: 16px;
+    }
+</style>
