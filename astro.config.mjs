@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import rehypePrettyCode from "rehype-pretty-code";
- 
+import node from '@astrojs/node'
+
 const prettyCodeOptions = {
   theme: "github-dark",
   onVisitLine(node) {
@@ -27,5 +28,12 @@ export default defineConfig({
         extendDefaultPlugins: true,
         syntaxHighlight: false,
         rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
+    },
+    output: "server",
+    adapter: node({
+      mode: "standalone",
+    }),
+    server: {
+      port: 3334,
     },
 });
