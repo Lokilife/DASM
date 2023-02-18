@@ -1,15 +1,14 @@
 <script>
-  let expanded = true;
+  export let expanded = true;
+  console.log("expanded", expanded);
 </script>
 
 <div class="flex flex-column gap-10">
-  <button aria-expanded={expanded} class="title">
-    <!-- on:click={() => (expanded = !expanded)} -->
-    {#if expanded}
-      ◣
-    {:else}
-      ◤
-    {/if}
+  <button
+    aria-expanded={expanded}
+    class="title"
+    on:click={() => (expanded = !expanded)}
+  >
     <slot name="title" />
   </button>
   <div hidden={!expanded}>

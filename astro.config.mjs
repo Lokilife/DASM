@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import rehypePrettyCode from "rehype-pretty-code";
 import node from '@astrojs/node';
 import svelte from "@astrojs/svelte";
+import mdx from "@astrojs/mdx";
 const prettyCodeOptions = {
   theme: "github-dark",
   onVisitLine(node) {
@@ -23,6 +24,8 @@ const prettyCodeOptions = {
 // https://astro.build/config
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
   markdown: {
     extendDefaultPlugins: true,
@@ -36,5 +39,5 @@ export default defineConfig({
   server: {
     port: 3333
   },
-  integrations: [svelte()]
+  integrations: [svelte(), mdx()]
 });

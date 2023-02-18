@@ -1,5 +1,5 @@
 <script>
-  import Collapsible from "./collapsible.svelte";
+  import Collapsible from "../../collapsible/collapsible.svelte";
   export let pages;
 </script>
 
@@ -9,7 +9,7 @@
       {#if item.pages}
         <Collapsible>
           <div slot="title">
-            {item.title}
+            ◤ {item.title}
           </div>
           <div slot="content">
             <svelte:self pages={item.pages} />

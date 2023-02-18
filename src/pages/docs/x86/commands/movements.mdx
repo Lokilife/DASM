@@ -1,0 +1,67 @@
+---
+title: DASM | Movements
+layout: /src/layouts/Documentation.astro
+---
+
+import Collapsible from "/src/components/collapsible/collapsible.svelte";
+
+# Movements
+
+<ul>
+<li>
+    <Collapsible client:only expanded={false}>
+        <span slot="title">mov - присваивание</span>
+        <span slot="content">
+            <div class="flex">
+                <div class="md-row-subtable">
+
+                ```asm
+                mov ax, r16
+                mov 216, ax
+                mov eax, 232
+                mov 232, eax
+                ; ...
+                ```
+
+                Не влияет на флаги
+
+                </div>
+                <div class="md-row-subtable">
+                    <h2>Описание:</h2>
+                    Ещё раз объясняю для особо развитых: команда присваивает значение источника приёмнику
+                </div>
+            </div>
+
+        </span>
+    </Collapsible>
+
+</li>
+
+<li>
+    <Collapsible client:only expanded={false}>
+        <span slot="title">xchg - свап значений</span>
+        <span slot="content">
+            <div class="flex">
+                <div class="md-row-subtable">
+
+                ```asm
+                xchg ax, r16
+                xchg 216, ax
+                xchg eax, 232
+                xchg 232, eax
+                ; ...
+                ```
+
+                Не влияет на флаги
+
+                </div>
+                <div class="md-row-subtable">
+                    <h2>Описание:</h2>
+                    Ещё раз объясняю для особо развитых: команда меняет значение приёмника с источником
+                </div>
+            </div>
+        </span>
+    </Collapsible>
+
+</li>
+</ul>
