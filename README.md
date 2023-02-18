@@ -6,7 +6,7 @@ Follow me and ask yourself a question: "What if assembly had good documentation?
 # Hello, World!
 
 Sadly, documentation isn't writed yet cuz this site has been created only few days ago (2/18/2023).
-But we'll work on it! By the way this site weight less than 14 KB excluding docs materials.
+But we'll work on it!
 
 # dev, build, start
 
