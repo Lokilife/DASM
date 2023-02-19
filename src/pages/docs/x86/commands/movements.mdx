@@ -5,7 +5,7 @@ layout: /src/layouts/Documentation.astro
 
 import Collapsible from "/src/components/collapsible/collapsible.svelte";
 
-# Movements
+# Перемещения
 
 <ul class="flex flex-column gap-10">
 <li>
@@ -27,8 +27,12 @@ import Collapsible from "/src/components/collapsible/collapsible.svelte";
 
                 </div>
                 <div class="md-row-subtable">
-                    <h2>Описание:</h2>
-                    Ещё раз объясняю для особо развитых: команда присваивает значение источника приёмнику
+                    Присваивает значение источника приёмнику
+
+                    ```asm
+                    mov eax, 10     ; eax = 10
+                    mov ebx, eax    ; ebx = 10
+                    ```
                 </div>
             </div>
 
@@ -56,12 +60,48 @@ import Collapsible from "/src/components/collapsible/collapsible.svelte";
 
                 </div>
                 <div class="md-row-subtable">
-                    <h2>Описание:</h2>
-                    Ещё раз объясняю для особо развитых: команда меняет значение приёмника с источником
+                    Меняет значение приёмника с источником
+
+                    ```asm
+                    mov eax, 10
+                    mov ebx, 42
+                    xchg eax, ebx
+                    ; eax = 42, ebx = 10
+                    ```
                 </div>
             </div>
         </span>
     </Collapsible>
-
 </li>
+
+<li>
+    <Collapsible client:only expanded={false}>
+        <span slot="title">bswap - свап байтов</span>
+        <span slot="content">
+            <div class="flex">
+                <div class="md-row-subtable">
+
+                <table>
+                <tr> <th>опкод</th>            <th>инструкция</th> </tr>
+                <tr> <td>0F C8+rd</td>         <td>BSWAP r32</td>  </tr>
+                <tr> <td>REX.W + 0F C8+rd</td> <td>BSWAP r64</td>  </tr> 
+                </table>
+
+                Не влияет на флаги
+
+                </div>
+                <div class="md-row-subtable">
+                    Меняет порядок байт. Был little endian - стал big endian, и наоборот
+
+                    ```asm
+                    mov eax, 0x01020304
+                    bswap   ; eax = 0x04030201
+                    ```
+                </div>
+            </div>
+        </span>
+    </Collapsible>
+</li>
+
+
 </ul>
