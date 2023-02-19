@@ -21,11 +21,7 @@ const prettyCodeOptions = {
   },
   tokensMap: {}
 };
-// https://astro.build/config
 
-// https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
   markdown: {
     extendDefaultPlugins: true,
